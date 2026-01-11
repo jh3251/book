@@ -1,0 +1,7 @@
+{
+  "name": "Book",
+  "description": "A premier marketplace for students in Bangladesh to buy and sell used textbooks and novels with precise location-based filtering.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSwap Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: 142 30% 98%;
+            --primary: 142 76% 20%;
+            --accent: 142 72% 40%;
+            --primary-foreground: 0 0% 0%;
+            --accent-foreground: 0 0% 100%;
+        }
+        body {
+            font-family: 'PT Sans', sans-serif;
+            background-color: hsl(142, 30%, 98%);
+            color: #000000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(142, 30%, 98%)',
+                        primary: {
+                            DEFAULT: 'hsl(142, 76%, 20%)',
+                            foreground: '#000000',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(142, 72%, 40%)',
+                            foreground: '#ffffff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
