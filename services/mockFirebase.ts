@@ -111,16 +111,20 @@ export const mockFirestore = {
     };
     const listings = getStore<BookListing>(LISTINGS_KEY);
     setStore(LISTINGS_KEY, [...listings, newList]);
+    // Dispatch event so Home page knows to update
+    window.dispatchEvent(new Event('listingsChange'));
     return newList;
   },
   updateListing: async (id: string, updates: Partial<BookListing>): Promise<void> => {
     const listings = getStore<BookListing>(LISTINGS_KEY);
     const updated = listings.map(l => l.id === id ? { ...l, ...updates } : l);
     setStore(LISTINGS_KEY, updated);
+    window.dispatchEvent(new Event('listingsChange'));
   },
   deleteListing: async (id: string): Promise<void> => {
     const listings = getStore<BookListing>(LISTINGS_KEY);
     setStore(LISTINGS_KEY, listings.filter(l => l.id !== id));
+    window.dispatchEvent(new Event('listingsChange'));
   },
   getUserProfile: async (uid: string): Promise<User | undefined> => {
     return getStore<User>(USERS_KEY).find(u => u.uid === uid);
