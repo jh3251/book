@@ -28,6 +28,9 @@
         }
     </style>
     <script>
+        // Polyfill for process.env which is often required by client-side SDKs
+        window.process = window.process || { env: { API_KEY: '' } };
+
         tailwind.config = {
             theme: {
                 extend: {
@@ -57,6 +60,7 @@
   }
 }
 </script>
+<script type="module" src="./index.tsx"></script>
 </head>
 <body>
     <div id="root"></div>
